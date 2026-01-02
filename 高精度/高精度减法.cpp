@@ -34,10 +34,16 @@ vector<int>  BigNumSub(const string &a, const string& b){
         int c;
         c = va[i] - cn;
         if(i < b.size()) c -= vb[i];
-        cn = 0;
-        if(va[i] < vb[i]) cn = 1;
-        res.push_back((c+10)%10);
+
+        if(c < 0) {
+            c += 10;
+            cn = 1;
+        } else {
+            cn = 0;
+        }
+        res.push_back(c);
     }
+    while (res.size() > 1 && res.back() == 0) res.pop_back();
     return res;
 }
 
