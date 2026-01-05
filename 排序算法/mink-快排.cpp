@@ -11,8 +11,7 @@ void quick_sort(int A[], int l, int r, int target) {
   // 两个边界要向外面扩大一格，因为我们后面做的是do while
   int i = l - 1;
   int j = r + 1;
-  int x = (i + j) /
-          2;  // 确定枢轴元素，第一次我们就干到中间，这样就能让一趟有两次递归了
+  int x = (i + j) / 2;  // 确定枢轴元素，第一次我们就干到中间，这样就能让一趟有两次递归了
   int pivot = A[x];
 
   while (i < j) {
